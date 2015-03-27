@@ -1,8 +1,8 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Slack Emotify",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
+  "description": "Speak in tongues (and little cutesy pictures).",
   "homepage_url": "http://extensionizr.com",
   "icons": {
     "16": "icons/icon16.png",
@@ -21,7 +21,6 @@
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
-    "https://slack.com"
   ],
   "omnibox": {
     "keyword": "extensionizr"
@@ -29,7 +28,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://*.slack.com/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -37,10 +36,10 @@
     },
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://*.slack.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "js/jquery/jquery.min.js", "src/inject/inject.js"
       ]
     }
   ]
